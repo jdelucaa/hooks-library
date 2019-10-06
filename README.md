@@ -10,7 +10,15 @@
 npm install --save hooks-library
 ```
 
-## Usage
+### Available hooks
+
+[useAxiosGet](#useAxiosGet)  
+[useBreakpoint](#useBreakpoint)  
+[useFormInput](#useFormInput)
+
+<a name="useAxiosGet"/>
+
+### `useAxiosGet`
 
 ```jsx
 import React, { Component } from 'react';
@@ -23,6 +31,40 @@ const Example = () => {
     <div>
       {isError && <div>Something went wrong...</div>}
       {isLoading ? <div>Loading...</div> : <div>{data}</div>}
+    </div>
+  );
+};
+```
+
+<a name="useBreakpoint"/>
+
+### `useBreakpoint`
+
+```jsx
+import React, { Component } from 'react';
+import { useBreakpoint } from 'hooks-library';
+
+const Example = () => {
+  const brkPnt = useBreakpoint();
+
+  return <div>{brkPnt}</div>;
+};
+```
+
+<a name="useFormInput"/>
+
+### `useFormInput`
+
+```jsx
+import React, { Component } from 'react';
+import { useFormInput } from 'hooks-library';
+
+const Example = () => {
+  const value = useFormInput();
+
+  return (
+    <div>
+      <input {...value} />
     </div>
   );
 };
