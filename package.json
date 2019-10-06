@@ -1,0 +1,62 @@
+{
+  "name": "hooks-library",
+  "version": "1.0.0",
+  "description": "React Hooks Library",
+  "author": "jdelucaa",
+  "license": "MIT",
+  "repository": "jdelucaa/hooks-library",
+  "main": "dist/index.js",
+  "engines": {
+    "node": ">=8",
+    "npm": ">=5"
+  },
+  "scripts": {
+    "test": "cross-env CI=1 react-scripts test --env=jsdom",
+    "test:watch": "react-scripts test --env=jsdom",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepare": "yarn run build",
+    "predeploy": "cd example && yarn install && yarn run build",
+    "deploy": "gh-pages -d example/build",
+    "lint": "eslint ./src",
+    "format": "prettier \"**/*.{js,jsx,html,json,md,css,scss}\" --write",
+    "format:check": "npm run format -- --check"
+  },
+  "peerDependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.2",
+    "@babel/preset-env": "^7.6.2",
+    "@babel/preset-react": "^7.0.0",
+    "@svgr/rollup": "^4.3.3",
+    "@testing-library/jest-dom": "^4.1.0",
+    "@testing-library/react": "^9.3.0",
+    "@testing-library/react-hooks": "^2.0.3",
+    "axios": "^0.19.0",
+    "babel-eslint": "^10.0.3",
+    "cross-env": "^5.1.4",
+    "eslint": "^6.5.1",
+    "gh-pages": "^1.2.0",
+    "lodash.throttle": "^4.1.1",
+    "prettier": "^1.18.2",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-scripts": "^3.2.0",
+    "react-test-renderer": "^16.10.2",
+    "rollup": "^1.23.1",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.0",
+    "rollup-plugin-postcss": "^2.0.3",
+    "rollup-plugin-terser": "^5.1.2",
+    "rollup-plugin-url": "^2.2.2"
+  },
+  "files": [
+    "dist"
+  ]
+}
